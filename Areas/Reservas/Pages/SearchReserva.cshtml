@@ -1,0 +1,34 @@
+﻿@page "/Reserva/SearchReserva"
+@model SearchReservaModel
+@{
+}
+<div class="container p-4">
+    <div class="row">
+        <div class="form-group">
+
+            <form asp-area="Reservas" asp-page="SearchReserva" method="post">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input asp-for="Input.Nombre" placeholder="@Html.DisplayNameFor(model => model.Input.Nombre)" class="form-control" autofocus />
+                            <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Input.CodigoReserva" placeholder="@Html.DisplayNameFor(model => model.Input.CodigoReserva)" class="form-control" />
+                        <span asp-validation-for="Input.CodigoReserva" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <input type="submit" value="Buscar" class="btn btn-success">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-danger">@Html.DisplayFor(m => m.Input.ErrorMessage)  </label>
+                        <label class="text-danger">@TempData["message"]  </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

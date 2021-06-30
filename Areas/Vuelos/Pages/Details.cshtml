@@ -1,0 +1,114 @@
+﻿@page
+@model DetailsModel
+@{
+    
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm ">
+            <div class="card text-center" style="width: 21rem;">
+                <div class="card-header ">
+                    <img class='imageUserDetails' src="~/images/vuelo.png" />
+                </div>
+                <div class="card-body">
+                    <div class="col-md-10">
+                        <div class="row">
+                            <p> @Model.Input.DataVuelo.FechaSalida</p>
+                        </div>
+                        <div class="row">
+                            <p> @Model.Input.DataVuelo.CiudadOrigen</p>
+                        </div>
+                        <div class="row">
+                            <p> @Model.Input.DataVuelo.CiudadDestino</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                    <table class="tableCursos">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    Informacion
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Input.DataVuelo.FechaSalida)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataVuelo.FechaSalida</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Input.DataVuelo.FechaLlegada)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataVuelo.FechaLlegada</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Input.DataVuelo.CantidadSillas)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataVuelo.CantidadSillas</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Input.DataVuelo.CiudadOrigen)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataVuelo.CiudadOrigen</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Input.DataVuelo.CiudadDestino)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataVuelo.CiudadDestino</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Input.DataVuelo.Precio)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataVuelo.Precio</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Input.DataVuelo.TipoVuelo)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Input.DataVuelo.TipoVuelo</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

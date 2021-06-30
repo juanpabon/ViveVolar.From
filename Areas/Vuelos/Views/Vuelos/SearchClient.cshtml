@@ -1,0 +1,50 @@
+﻿@model DataPaginador<InputModelRegister>
+@{
+    ViewData["Title"] = "Buscar Vuelos";
+}
+<div class="container p-4">
+    <div class="row">
+        @foreach (var item in Model.List)
+        {
+
+            <div class="col-xs-6 col-md-2">
+                <div class="card text-center">
+                    <div class="card-header ">
+                        <a asp-route-id="@item.Id" asp-area="Reservas" asp-page="/Register">
+                            <img class='imageUsers' src="~/images/vuelo.png" />
+                        </a>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="col-md-10">
+                            <div class="row">
+                                <p>Salida:  @Html.DisplayFor(modelItem => item.FechaSalida)</p>
+                            </div>
+                            <div class="row">
+                                <p>Llegada:  @Html.DisplayFor(modelItem => item.FechaLlegada)</p>
+                            </div>
+                            <div class="row">
+                                <p>Origen: @Html.DisplayFor(modelItem => item.CiudadOrigen)</p>
+                            </div>
+                            <div class="row">
+                                <p>Destino: @Html.DisplayFor(modelItem => item.CiudadDestino)</p>
+                            </div>
+                            <div class="row">
+                                <p>Precio: @Html.DisplayFor(modelItem => item.Precio)</p>
+                            </div>
+                            <div class="row">
+                                <a class="btn btn-success " asp-route-id="@item.Id" asp-area="Reservas" asp-page="/Register">
+                                    Reservar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="text-center">
+    Resultados @Html.Raw(Model.Pagi_info)
+    <br />
+    @Html.Raw(Model.Pagi_navegacion)
+</div>

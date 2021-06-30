@@ -1,0 +1,49 @@
+﻿@page "/Vuelos/SearchFlights"
+@model SearchFlightsModel
+@{
+}
+<div class="container p-4">
+    <div class="row">
+        <div class="form-group">
+
+            <form asp-area="Vuelos" asp-page="SearchFlights" method="post">
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input asp-for="Input.FechaInicio" placeholder="@Html.DisplayNameFor(model => model.Input.FechaInicio)" class="form-control" autofocus />
+                            <span asp-validation-for="Input.FechaInicio" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Input.FechaFin" placeholder="@Html.DisplayNameFor(model => model.Input.FechaFin)" class="form-control" />
+                        <span asp-validation-for="Input.FechaFin" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input asp-for="Input.Cantidad" placeholder="@Html.DisplayNameFor(model => model.Input.Cantidad)" class="form-control" />
+                        <span asp-validation-for="Input.Cantidad" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input asp-for="Input.CiudadOrigen" placeholder="@Html.DisplayNameFor(model => model.Input.CiudadOrigen)" class="form-control" />
+                        <span asp-validation-for="Input.CiudadOrigen" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input asp-for="Input.CiudadDestino" placeholder="@Html.DisplayNameFor(model => model.Input.CiudadDestino)" class="form-control" />
+                        <span asp-validation-for="Input.CiudadDestino" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <input type="submit" value="Buscar" class="btn btn-success">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="text-danger">@Html.DisplayFor(m => m.Input.ErrorMessage)  </label>
+                        <label class="text-danger">@TempData["message"]  </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

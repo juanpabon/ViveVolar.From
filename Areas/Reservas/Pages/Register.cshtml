@@ -1,0 +1,111 @@
+﻿@page "/Reservas/Register"
+@model RegisterModel
+@{
+}
+<div class="container p-4">
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-xs-8 col-md-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Realizar Reserva</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <div id="header" class="bg-info">
+                                        <h2 class="mb-0 t">
+                                            <button class="btn btn-link text-light " type="button" data-toggle="collapse"
+                                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Ingresar informacion
+                                            </button>
+                                        </h2>
+                                    </div>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                     data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <input asp-for="Input.Cantidad" placeholder="@Html.DisplayNameFor(model => model.Input.Cantidad)" class="form-control" readonly />
+                                            <span asp-validation-for="Input.Cantidad" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input asp-for="Input.PrecioReserva" placeholder="@Html.DisplayNameFor(model => model.Input.PrecioReserva)" class="form-control" readonly />
+                                            <span asp-validation-for="Input.PrecioReserva" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input asp-for="Input.Nombre" placeholder="@Html.DisplayNameFor(model => model.Input.Nombre)" class="form-control" autofocus />
+                                            <span asp-validation-for="Input.Nombre" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input asp-for="Input.TipoIdentificacion" placeholder="@Html.DisplayNameFor(model => model.Input.TipoIdentificacion)" class="form-control" />
+                                            <span asp-validation-for="Input.TipoIdentificacion" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input asp-for="Input.Identificacion" placeholder="@Html.DisplayNameFor(model => model.Input.Identificacion)" class="form-control" />
+                                            <span asp-validation-for="Input.Identificacion" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input asp-for="Input.Email" placeholder="@Html.DisplayNameFor(model => model.Input.Email)" class="form-control" />
+                                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input asp-for="Input.Telefono" placeholder="@Html.DisplayNameFor(model => model.Input.Telefono)" class="form-control" />
+                                            <span asp-validation-for="Input.Telefono" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input asp-for="Input.Direccion" placeholder="@Html.DisplayNameFor(model => model.Input.Direccion)" class="form-control" />
+                                            <span asp-validation-for="Input.Direccion" class="text-danger"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                                            <input asp-for="Input.VueloId"  class="form-control" hidden/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="text-danger">@Html.DisplayFor(m => m.Input.ErrorMessage)  </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <div class="card text-center" style="width: 21rem;">
+                    <div class="card-header ">
+                        <img class='imageUserDetails' src="~/images/vuelo.png" />
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-10">
+                            <div class="row">
+                                <p>Salida: @Model.Input.FechaSalida</p>
+                            </div>
+                            <div class="row">
+                                <p>Llegada: @Model.Input.FechaLlegada</p>
+                            </div>
+                            <div class="row">
+                                <p>Origen: @Model.Input.CiudadOrigen</p>
+                            </div>
+                            <div class="row">
+                                <p>Destino: @Model.Input.CiudadDestino</p>
+                            </div>
+                            <div class="row">
+                                <p>Precio: @Model.Input.Precio</p>
+                            </div>
+                            <div class="row">
+                                <p>Tipo Vuelo: @Model.Input.TipoVuelo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

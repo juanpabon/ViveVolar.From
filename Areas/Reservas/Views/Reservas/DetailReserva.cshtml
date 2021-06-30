@@ -1,0 +1,163 @@
+﻿@model InputModelRegister
+@{
+    ViewData["Title"] = "Detalle Reserva";
+}
+<div class="container">
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="col-sm ">
+            <div class="card text-center" style="width: 21rem;">
+                <div class="card-header ">
+                    <img class='imageUserDetails' src="~/images/vueloDet.png" />
+                </div>
+                <div class="card-body">
+                    <div class="col-md-10">
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.FechaSalida)
+                        </div>
+                        <div class="row">
+                            <p> @Model.FechaSalida</p>
+                        </div>
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.FechaLlegada)
+                        </div>
+                        <div class="row">
+                            <p> @Model.FechaLlegada</p>
+                        </div>
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.CiudadOrigen)
+                        </div>
+                        <div class="row">
+                            <p> @Model.CiudadOrigen</p>
+                        </div>
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.CiudadDestino)
+                        </div>
+                        <div class="row">
+                            <p> @Model.CiudadDestino</p>
+                        </div>
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.TipoVuelo)
+                        </div>
+                        <div class="row">
+                            <p> @Model.TipoVuelo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-10">
+                        @if(@Model.Estado=="Reservado")
+                        { 
+                        <div class="row">
+                            <a class="btn btn-success " asp-route-id="@Model.Id" asp-area="Reservas" asp-action="Pay">
+                                Pagar
+                            </a>
+                        </div>
+                        }
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </div>
+                        <div class="row">
+                            <p> @Model.Estado</p>
+                        </div>
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.Cantidad)
+                        </div>
+                        <div class="row">
+                            <p> @Model.Cantidad</p>
+                        </div>
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.PrecioReserva)
+                        </div>
+                        <div class="row">
+                            <p> @Model.PrecioReserva</p>
+                        </div>
+                        <div class="row">
+                            @Html.DisplayNameFor(model => model.FechaReserva)
+                        </div>
+                        <div class="row">
+                            <p> @Model.FechaReserva</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                    <table class="tableCursos">
+                        <tbody>
+                            <tr>
+                                <th>
+                                    Informacion Cliente
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Nombre</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TipoIdentificacion)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.TipoIdentificacion</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Identificacion)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Identificacion</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Email</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Telefono)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Telefono</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Direccion)
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>@Model.Direccion</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
